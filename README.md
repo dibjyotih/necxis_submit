@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# Expogo 🚀
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Expogo is an Expo-based Android & iOS application that wraps a **Next.js web app** inside a WebView. It delivers a native-like mobile experience for a web-based product and leverages **Firebase Authentication** and **Push Notifications** via **Firebase Cloud Messaging (FCM)**.
 
-## Get started
+---
 
-1. Install dependencies
+# 🔗 Related Links
+🔗 Frontend (Next.js Web): [https://github.com/YOUR_USERNAME/nextjs-web](https://github.com/dibjyotih/necxis_assignment)
 
-   ```bash
-   npm install
-   ```
+🚀 Live App (Vercel):  https://necxis-assignment-phi.vercel.app/
+![image](https://github.com/user-attachments/assets/4a5cb1e3-2517-4005-928e-3340b1e56286)
 
-2. Start the app
 
-   ```bash
-   npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+## 📲 Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 🔒 Google Sign-In via Firebase
+- 🌐 Loads website hosted on **Vercel** using WebView
+- 🔔 Native push notifications with FCM
+- 📱 Cross-platform: Android & iOS
+- 🔄 Persistent login and smooth WebView transitions
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🌐 Why Vercel?
 
-When you're ready, run:
+The frontend is hosted on **Vercel** to ensure:
+- Fast, global CDN delivery
+- Stable HTTPS domain for FCM & OAuth callbacks
+- Consistent WebView performance across devices
 
-```bash
-npm run reset-project
-```
+## File Structure
+![image](https://github.com/user-attachments/assets/b3459da0-ede4-4500-a2be-1f51f1f5bc1d)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 📂 Key Code: `index.js`
 
-To learn more about developing your project with Expo, look at the following resources:
+This is the entry point of the app. It:
+- Renders a `WebView` pointing to the Vercel-hosted app
+- Handles deep links, push notifications, and WebView navigation
+- Integrates Firebase native modules for token handling
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# 📦 How to Run
+📱 Android
+npx expo start --android
+🍎 iOS (requires macOS)
+npx expo start --ios
 
-## Join the community
+# ✅ Highlights
+-  Google OAuth & Firebase Auth integration
+-  Native FCM push notifications
+-  Seamless WebView UX
+-  Runs on both Android and iOS
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```js
+import React from 'react';
+import { WebView } from 'react-native-webview';
+
+export default function App() {
+  return <WebView source={{ uri: "https://necxis.vercel.app" }} />;
+}
